@@ -1,0 +1,23 @@
+{
+  "name": "microfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-s start:cats start:dogs start:container",
+    "start:cats": "cd ./cats &&  ttab -t 'cats' npm start",
+    "start:dogs": "cd ./dogs &&  ttab -t 'dogs' npm start",
+    "start:container": "cd ./container &&  ttab -t 'container' npm start",
+    "postinstall": "npm run install:cats & npm run install:dogs & npm run install:container",
+    "install:cats": "cd ./cats && npm install",
+    "install:dogs": "cd ./dogs && npm install",
+    "install:container": "cd ./container && npm install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-run-all": "^4.1.5",
+    "ttab": "^0.8.0"
+  }
+}
